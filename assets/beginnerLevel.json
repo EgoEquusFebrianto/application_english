@@ -1,0 +1,216 @@
+[
+    {
+        "id" : 1,
+        "language" : "Indonesia",
+        "kalimat" : "Dia minum",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "She"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "drinks"
+            }
+        ],
+        "typeAns" : "A"
+    },
+    {
+        "id" : 2,
+        "language" : "Indonesia",
+        "kalimat" : "Dia makan roti",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "He"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "eats"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "bread"
+            }
+        ],
+        "typeAns" : "B"
+    },
+    {
+        "id" : 3,
+        "language" : "Indonesia",
+        "kalimat" : "Saya minum air",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "drink"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "water"
+            }
+        ],
+        "typeAns" : "B"
+    },
+    {
+        "id" : 4,
+        "language" : "Indonesia",
+        "kalimat" : "Dia seorang wanita",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "She"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "is"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "a"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "woman"
+            }
+        ],
+        "typeAns" : "C"
+    },
+    {
+        "id" : 5,
+        "language" : "Indonesia",
+        "kalimat" : "Dia adalah anak laki-laki",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "He"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "is"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "a"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "boy"
+            }
+        ],
+        "typeAns" : "C"
+    },
+    {
+        "id" : 6,
+        "language" : "Indonesia",
+        "kalimat" : "Saya seorang mahasiswa",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "am"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "a"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "student"
+            }
+        ],
+        "typeAns" : "C"
+    },
+    {
+        "id" : 7,
+        "language" : "Indonesia",
+        "kalimat" : "Seorang wanita dan sebuah apel",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "A"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "woman"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "and"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "an"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "apple"
+            }
+        ],
+        "typeAns" : "D"
+    },
+    {
+        "id" : 8,
+        "language" : "Indonesia",
+        "kalimat" : "wanita itu makan sebuah apel",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "The"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "woman"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "eats"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "the"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "apple"
+            }
+        ],
+        "typeAns" : "D"
+    }
+]

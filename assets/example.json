@@ -1,0 +1,83 @@
+[
+    {
+        "id" : 1,
+        "kalimat" : "Saya Lebih Suka Teh Dari Pada Kopi",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "More Like"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "Tea"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "Than"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "Coffee and Chips"
+            }
+        ],
+        "typeAns" : "B"
+    },
+    {
+        "id" : 2,
+        "kalimat" : "Apakah Mereka Makan Daging",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Do"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "They"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "Eat"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "Meat"
+            }
+        ],
+        "typeAns" : "A"
+    },
+    {
+        "id" : 3,
+        "kalimat" : "dia seorang wanita",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "She is"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "a"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "woman"
+            }
+        ],
+        "typeAns" : "C"
+    }
+]

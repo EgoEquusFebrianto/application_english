@@ -1,0 +1,480 @@
+[
+    {
+        "id" : 1,
+        "language" : "Indonesia",
+        "kalimat" : "apakah mereka manusia",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Are"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "they"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "human"
+            }
+        ],
+        "typeAns" : "A"
+    },
+        {
+        "id" : 2,
+        "language" : "Indonesia",
+        "kalimat" : "Apa nama resminya",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "What"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "name"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "official"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "is"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "the"
+            }
+        ],
+        "typeAns" : "D1"
+    },
+    {
+        "id" : 3,
+        "language" : "English",
+        "kalimat" : "She is my future girlfriend",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Dia"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "adalah"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "calon"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "pacar"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "saya"
+            }
+        ],
+        "typeAns" : "C"
+    },
+    {
+        "id" : 4,
+        "language" : "Indonesia",
+        "kalimat" : "Saya cinta dia dan seluruh keluarga saya",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "love"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "her"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "and"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "whole"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "My"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "family"
+            }
+        ],
+        "typeAns" : "E"
+    },
+    {
+        "id" : 6,
+        "language" : "Indonesia",
+        "kalimat" : "Anak-anak itu tidak bertanggung jawab",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "children"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "are"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "The"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "not"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "responsible"
+            }
+        ],
+        "typeAns" : "F1"
+    },
+    {
+        "id":7,
+        "language" : "English",
+        "kalimat": "Return the horse to him",
+        "words": [
+            {
+                "id":1,
+                "cursor":false,
+                "word": "Kembalikan"
+            },
+            {
+                "id":2,
+                "cursor":false,
+                "word": "itu"
+            },
+                        {
+                "id":3,
+                "cursor":false,
+                "word": "Kuda"
+            },
+                        {
+                "id":4,
+                "cursor":false,
+                "word": "kepadanya"
+            }
+        ],
+        "typeAns": "B1"
+    },
+    {
+        "id" : 8,
+        "language" : "Indonesia",
+        "kalimat" : "Seorang wanita dan sebuah apel",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "A"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "woman"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "and"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "an"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "apple"
+            }
+        ],
+        "typeAns" : "C"
+    },
+    {
+        "id" : 9,
+        "language" : "Indonesia",
+        "kalimat" : "Tolong pertimbangkan pekerjaan yang saya tawarkan kepadamu",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Please"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "consider"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "the"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "job"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "offer"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "to"
+            },
+            {
+                "id" : 8,
+                "cursor" : false,
+                "word" : "you"
+            }
+        ],
+        "typeAns" : "F"
+    },{
+        "id" : 10,
+        "language" : "Indonesia",
+        "kalimat" : "Dia menawarkan kepada saya uangnya",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "He"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "Offers"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "to"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "me"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "his"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "money"
+            }
+        ],
+        "typeAns" : "D"
+    },
+    {
+        "id" : 11,
+        "language" : "English",
+        "kalimat" : "She and i present your work",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Dia"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "dan"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "Saya"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "mempresentasikan"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "pekerjaanmu"
+            }
+        ],
+        "typeAns" : "C"
+    },{
+        "id" : 12,
+        "language" : "English",
+        "kalimat" : "I remember the times when you fail",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Saya"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "ingat"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "waktu"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "ketika"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "kamu"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "gagal"
+            }
+        ],
+        "typeAns" : "D"
+    },{
+        "id" : 13,
+        "language" : "English",
+        "kalimat" : "Save the wine for tonight",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Simpan"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "anggurnya"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "untuk"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "malam"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "ini"
+            }
+        ],
+        "typeAns" : "C"
+    },{
+        "id" : 14,
+        "language" : "English",
+        "kalimat" : "I really like this job",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Saya"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "sangat"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "menyukai"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "pekerjaan"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "ini"
+            }
+        ],
+        "typeAns" : "C"
+    },
+    {
+        "id" : 15,
+        "language" : "Indonesia",
+        "kalimat" : "Kamu berbicara bahasa Inggris dengan sangat baik!",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "You"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "speak"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "English"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "very"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "Well!"
+            }
+        ],
+        "typeAns" : "C"
+    }
+]
