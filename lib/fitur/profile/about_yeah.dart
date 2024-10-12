@@ -193,8 +193,6 @@ class TheTeamHeader extends StatelessWidget {
   }
 }
 
-
-
 class TeamCard extends StatelessWidget {
   final String name;
   final String image;
