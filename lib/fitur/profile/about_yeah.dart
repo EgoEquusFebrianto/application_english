@@ -59,7 +59,7 @@ class AboutYeah extends StatelessWidget {
               const SizedBox(height: 30),
               TheTeamHeader(),
               const SizedBox(height: 30),
-              TeamGrid(),
+
               const SizedBox(height: 30),
               FeaturesSection(),
             ],
