@@ -193,43 +193,6 @@ class TheTeamHeader extends StatelessWidget {
   }
 }
 
-class TeamGrid extends StatelessWidget {
-  final List<Map<String, String>> teamMembers = [
-    {
-      'name': 'Peter Fomas Hia',
-      'image': 'assets/pict/peter.jpeg',
-    },
-    {
-      'name': 'Joshua Bulyan Zebua',
-      'image': 'assets/pict/joshua.jpeg',
-    },
-    {
-      'name': 'Albert Putra Pratama',
-      'image': 'assets/pict/albert.jpeg',
-    },
-    {
-      'name': 'Febrianto Kudadiri',
-      'image':'assets/pict/febrianto.jpeg',
-    },
-    // Add other team members here
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 20,
-      runSpacing: 30,
-      alignment: WrapAlignment.center,
-      children: teamMembers.map((member) {
-        return TeamCard(
-          name: member['name']!,
-          image: member['image']!,
-        );
-      }).toList(),
-    );
-  }
-}
-
 class TeamCard extends StatelessWidget {
   final String name;
   final String image;
