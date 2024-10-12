@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: value.themeData,
           title: 'Learning_App',
-          home: const Login(),
+          home: Login(),
         );
       }),
     );

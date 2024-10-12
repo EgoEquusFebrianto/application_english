@@ -1,259 +1,160 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'auth_prov.dart';
 import 'login.dart';
-import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class Register extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
 
-  @override
-  State<Register> createState() => _RegisterState();
-}
-
-class _RegisterState extends State<Register> {
-  TextEditingController email = TextEditingController();
-  TextEditingController pass = TextEditingController();
-  TextEditingController passrepeat = TextEditingController();
-  TextEditingController dobController = TextEditingController();
-
-  bool isError = false;
-  bool isVisible = false;
-  bool isSame = false;
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-    );
-    if (picked != null) {
-      setState(() {
-        dobController.text = DateFormat('yyyy-MM-dd').format(picked);
-      });
-    }
-  }
+  Register({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
+
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue.shade800, Colors.blue.shade200],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 30,),
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Icon(
-                  Icons.app_registration,
-                  color: Colors.blue,
-                  size: 80,
-                ),
-                radius: 70,
-              ),
-              SizedBox(height: 20),
-              Text(
-                "Create Account",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "Please fill the details to register",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
-                ),
-              ),
-              SizedBox(height: 30),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 10,
-                      offset: Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    TextField(
-                      controller: email,
-                      onChanged: (val) {
-                        setState(() {
-                          isError = false;
-                          isVisible = false;
-                        });
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Email',
-                        prefixIcon: Icon(Icons.email_outlined),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    SizedBox(height: 20),
-                    TextField(
-                      controller: pass,
-                      onChanged: (val) {
-                        setState(() {
-                          isError = false;
-                          isVisible = false;
-                        });
-                      },
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        prefixIcon: Icon(Icons.lock),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        errorText: isError ? "Passwords do not match" : null,
-                      ),
-                      obscureText: true,
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    SizedBox(height: 20),
-                    TextField(
-                      controller: passrepeat,
-                      onChanged: (val) {
-                        setState(() {
-                          isError = false;
-                          isVisible = false;
-                        });
-                      },
-                      decoration: InputDecoration(
-                        labelText: "Confirm Password",
-                        prefixIcon: Icon(Icons.lock),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        errorText: isError ? "Passwords do not match" : null,
-                      ),
-                      obscureText: true,
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    SizedBox(height: 20),
-                    TextField(
-                      controller: dobController,
-                      readOnly: true,
-                      onTap: () => _selectDate(context),
-                      decoration: InputDecoration(
-                        labelText: "Date of Birth",
-                        prefixIcon: Icon(Icons.calendar_today),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      style: TextStyle(color: Colors.black),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              Visibility(
-                visible: isVisible,
-                child: Text(
-                  "All fields must be filled!",
-                  style: TextStyle(color: Colors.red),
-                ),
-              ),
-              Visibility(
-                visible: isSame,
-                child: Text(
-                  "Passwords do not match!",
-                  style: TextStyle(color: Colors.red),
-                ),
-              ),
-              SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    if (email.text.isEmpty ||
-                        pass.text.isEmpty ||
-                        passrepeat.text.isEmpty ||
-                        dobController.text.isEmpty) {
-                      isVisible = true;
-                      isError = true;
-                    } else if (pass.text != passrepeat.text) {
-                      isSame = true;
-                      isError = true;
-                    } else {
-                      Provider.of<AuthProvider>(context, listen: false)
-                          .saveRegisterInfo(email.text, pass.text);
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const Login()));
-                    }
-                  });
-                },
-                child: Text(
-                  "Register",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  fixedSize: Size(400, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  backgroundColor: Colors.blue.shade700,
-                ),
-              ),
-              SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have an account? ",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Login()));
-                    },
-                    child: Text(
-                      "Login!",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+        decoration: _buildGradientBackground(),
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildCircleAvatar(),
+                const SizedBox(height: 20),
+                _buildTitle(),
+                const SizedBox(height: 30),
+                _buildRegisterForm(context, authProvider),
+                const SizedBox(height: 20),
+                _buildLoginPrompt(context),
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+
+  BoxDecoration _buildGradientBackground() {
+    return BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Colors.blue.shade800, Colors.blue.shade200],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      ),
+    );
+  }
+
+  Widget _buildCircleAvatar() {
+    return const CircleAvatar(
+      backgroundColor: Colors.white,
+      child: Icon(Icons.person_add, color: Colors.blue, size: 80),
+      radius: 70,
+    );
+  }
+
+  Widget _buildTitle() {
+    return Column(
+      children: const [
+        Text(
+          "Create Account",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
+        ),
+        SizedBox(height: 10),
+        Text("Please fill in the details", style: TextStyle(color: Colors.white70, fontSize: 18)),
+      ],
+    );
+  }
+
+  Widget _buildRegisterForm(BuildContext context, AuthProvider authProvider) {
+    return Column(
+      children: [
+        _buildTextField(usernameController, "Username", Icons.person), // New for username
+        const SizedBox(height: 20),
+        _buildTextField(emailController, "Email", Icons.email_outlined),
+        const SizedBox(height: 20),
+        _buildTextField(passwordController, "Password", Icons.lock, obscureText: true),
+        const SizedBox(height: 20),
+        _buildTextField(confirmPasswordController, "Confirm Password", Icons.lock, obscureText: true),
+        const SizedBox(height: 10),
+        _buildRegisterButton(context, authProvider),
+      ],
+    );
+  }
+
+  Widget _buildTextField(
+      TextEditingController controller, String label, IconData icon, {bool obscureText = false}) {
+    return TextField(
+      controller: controller,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        labelText: label,
+        prefixIcon: Icon(icon),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+    );
+  }
+
+Widget _buildRegisterButton(BuildContext context, AuthProvider authProvider) {
+  return ElevatedButton(
+    onPressed: () async {
+      if (usernameController.text.isEmpty ||
+          emailController.text.isEmpty ||
+          passwordController.text.isEmpty ||
+          confirmPasswordController.text.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Please fill in all fields')),
+        );
+      } else if (passwordController.text != confirmPasswordController.text) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Passwords do not match')),
+        );
+      } else {
+        bool isRegistered = await authProvider.registerUser(
+          usernameController.text,
+          emailController.text,
+          passwordController.text,
+        );
+        if (isRegistered) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Registration Success')),
+          );
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Login()));
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Username already taken')),
+          );
+        }
+      }
+    },
+    child: const Text("Register", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+    style: ElevatedButton.styleFrom(
+      fixedSize: const Size(400, 50),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      backgroundColor: Colors.blue.shade700,
+    ),
+  );
+}
+
+  Widget _buildLoginPrompt(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text("Already have an account? ", style: TextStyle(color: Colors.white, fontSize: 16)),
+        GestureDetector(
+          onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Login())),
+          child: const Text(
+            "Login!",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
+          ),
+        ),
+      ],
     );
   }
 }
