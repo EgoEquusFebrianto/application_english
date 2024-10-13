@@ -3,120 +3,105 @@ import 'myDictionary/dictionary.dart';
 import 'Sentences/HandlerButton.dart';
 import 'TranslateGames/button_translate.dart';
 
-class Challange extends StatefulWidget {
+class Challange extends StatelessWidget {
   const Challange({Key? key}) : super(key: key);
 
   @override
-  State<Challange> createState() => _ChallangeState();
-}
-
-class _ChallangeState extends State<Challange> {
-  bool _loading = false;
-
-  Future<void> _navigateToHandlerButton(BuildContext context) async {
-    setState(() {
-      _loading = true;
-    });
-
-    await Future.delayed(Duration(milliseconds: 500)); // Simulating a delay
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HandlerButton(),
-      ),
-    );
-
-    setState(() {
-      _loading = false;
-    });
-  }
-
-  Future<void> _navigateToButtonTranslate(BuildContext context) async {
-    setState(() {
-      _loading = true;
-    });
-
-    await Future.delayed(Duration(milliseconds: 500)); // Simulating a delay
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ButtonTranslate(),
-      ),
-    );
-
-    setState(() {
-      _loading = false;
-    });
-  }
-
-  Future<void> _navigateToWordListScreen(BuildContext context) async {
-    setState(() {
-      _loading = true;
-    });
-
-    await Future.delayed(Duration(milliseconds: 500)); // Simulating a delay
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => WordListScreen(),
-      ),
-    );
-
-    setState(() {
-      _loading = false;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              "Challange",
-              style: TextStyle(color: Colors.white),
-            ),
-            backgroundColor: Colors.blue,
-          ),
-          body: Container(
-            padding: const EdgeInsets.all(10),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 10),
-                  _buildCard(
-                    "Button Translate",
-                    "assets/pict/icons/button translate.webp",
-                    Icons.translate,
-                    _navigateToButtonTranslate,
-                    isNetworkImage: false,
-                  ),
-                  const SizedBox(height: 10),
-                  _buildCard("Word Display", "assets/pict/icons/sentences.jpeg",
-                      Icons.text_fields, _navigateToHandlerButton,
-                      isNetworkImage: false),
-                  const SizedBox(height: 10),
-                  _buildCard("Vocabulary", "assets/pict/icons/vocabullary.jpg",
-                      Icons.lightbulb, _navigateToWordListScreen,
-                      isNetworkImage: false),
-                ],
+    // Using ValueNotifier to manage loading state
+    ValueNotifier<bool> loadingNotifier = ValueNotifier<bool>(false);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Challange",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blue,
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              _buildCard(
+                "Button Translate",
+                "assets/pict/icons/button translate.webp",
+                Icons.translate,
+                () => _navigateToButtonTranslate(context, loadingNotifier),
+                loadingNotifier,
               ),
-            ),
+              const SizedBox(height: 10),
+              _buildCard(
+                "Word Display",
+                "assets/pict/icons/sentences.jpeg",
+                Icons.text_fields,
+                () => _navigateToHandlerButton(context, loadingNotifier),
+                loadingNotifier,
+              ),
+              const SizedBox(height: 10),
+              _buildCard(
+                "Vocabulary",
+                "assets/pict/icons/vocabullary.jpg",
+                Icons.lightbulb,
+                () => _navigateToWordListScreen(context, loadingNotifier),
+                loadingNotifier,
+              ),
+              ValueListenableBuilder<bool>(
+                valueListenable: loadingNotifier,
+                builder: (context, isLoading, child) {
+                  if (isLoading) {
+                    return LoadingScreen();
+                  }
+                  return SizedBox.shrink(); // Return an empty widget when not loading
+                },
+              ),
+            ],
           ),
         ),
-        if (_loading) LoadingScreen(),
-      ],
+      ),
     );
   }
 
-  Widget _buildCard(String title, String imageUrl, IconData icon,
-      Function(BuildContext) onPressed,
-      {bool isNetworkImage = true}) {
+  void _navigateToHandlerButton(BuildContext context, ValueNotifier<bool> loadingNotifier) async {
+    loadingNotifier.value = true;
+    await Future.delayed(Duration(milliseconds: 500));
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HandlerButton()),
+    );
+    loadingNotifier.value = false;
+  }
+
+  void _navigateToButtonTranslate(BuildContext context, ValueNotifier<bool> loadingNotifier) async {
+    loadingNotifier.value = true;
+    await Future.delayed(Duration(milliseconds: 500));
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ButtonTranslate()),
+    );
+    loadingNotifier.value = false;
+  }
+
+  void _navigateToWordListScreen(BuildContext context, ValueNotifier<bool> loadingNotifier) async {
+    loadingNotifier.value = true;
+    await Future.delayed(Duration(milliseconds: 500));
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => WordListScreen()),
+    );
+    loadingNotifier.value = false;
+  }
+
+  Widget _buildCard(
+    String title,
+    String imageUrl,
+    IconData icon,
+    VoidCallback onPressed,
+    ValueNotifier<bool> loadingNotifier,
+  ) {
     return Card(
       elevation: 8,
       shape: RoundedRectangleBorder(
@@ -127,9 +112,7 @@ class _ChallangeState extends State<Challange> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
-            image: isNetworkImage
-                ? NetworkImage(imageUrl)
-                : AssetImage(imageUrl) as ImageProvider,
+            image: AssetImage(imageUrl), // Assuming all images are assets
             fit: BoxFit.cover,
           ),
         ),
@@ -139,14 +122,14 @@ class _ChallangeState extends State<Challange> {
               leading: Icon(icon, color: Colors.white),
               title: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   color: Colors.white,
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             ButtonBar(
               children: [
                 TextButton(
@@ -155,15 +138,10 @@ class _ChallangeState extends State<Challange> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    setState(() {
-                      _loading = true;
-                    });
-
+                    loadingNotifier.value = true;
                     Future.delayed(Duration(milliseconds: 500), () {
-                      onPressed(context);
-                      setState(() {
-                        _loading = false;
-                      });
+                      onPressed();
+                      loadingNotifier.value = false;
                     });
                   },
                 ),
@@ -183,9 +161,7 @@ class LoadingScreen extends StatelessWidget {
       child: Container(
         color: Colors.black.withOpacity(0.5),
         child: Center(
-          child: CircularProgressIndicator(
-            color: Colors.blue,
-          ),
+          child: CircularProgressIndicator(color: Colors.blue),
         ),
       ),
     );

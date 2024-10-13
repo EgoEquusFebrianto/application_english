@@ -4,9 +4,7 @@ import 'button_translate.dart';
 import '../tmp.dart';
 
 class EndGamePage extends StatelessWidget {
-  final int points;
-
-  const EndGamePage({Key? key, required this.points}) : super(key: key);
+  // const EndGamePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +20,20 @@ class EndGamePage extends StatelessWidget {
               'Selamat Kamu berhasil menyelesaikan permainan!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Tampilkan skor
                 showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
                       title: Text('Skor Akhir'),
-                      content: Text('Total Skor: $points'),
+                      content: Text('Total Skor: '),
                       actions: [
                         ElevatedButton(
                           onPressed: () {
@@ -52,7 +50,8 @@ class EndGamePage extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => Challange()));
                           },
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue),
                           child: Text(
                             "Main ke Level Berikutnya",
                             style: TextStyle(color: Colors.white),
@@ -70,10 +69,9 @@ class EndGamePage extends StatelessWidget {
               child: Text('Hitung Skor',
                   style: TextStyle(fontSize: 18, color: Colors.black)),
             ),
-            SizedBox(height: 20), // Menambahkan jarak vertikal antara tombol
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Bermain lagi
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => ButtonTranslate()));
               },
@@ -84,10 +82,9 @@ class EndGamePage extends StatelessWidget {
               child: Text('Bermain Lagi',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
             ),
-            SizedBox(height: 20), // Menambahkan jarak vertikal antara tombol
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Kembali
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Home()));
               },
@@ -100,18 +97,20 @@ class EndGamePage extends StatelessWidget {
             ),
             SizedBox(height: 40),
             Divider(
-                color: Colors.black, // Warna garis
-                thickness: 2, // Ketebalan garis (dalam satuan logical pixels)
-                height: 10,
-                indent: 200,
-                endIndent: 50),
+              color: Colors.black,
+              thickness: 2,
+              height: 10,
+              indent: 200,
+              endIndent: 50,
+            ),
             SizedBox(height: 5),
             Divider(
-                color: Colors.black, // Warna garis
-                thickness: 2, // Ketebalan garis (dalam satuan logical pixels)
-                height: 10,
-                indent: 100,
-                endIndent: 50),
+              color: Colors.black,
+              thickness: 2,
+              height: 10,
+              indent: 100,
+              endIndent: 50,
+            ),
             SizedBox(height: 20),
           ],
         ),

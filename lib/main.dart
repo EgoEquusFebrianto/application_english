@@ -5,13 +5,11 @@ import 'fitur/profile/provider/profil_prov.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'fitur/profile/provider/switchProvider.dart';
-
+import 'fitur/Challanges/TranslateGames/game_provider.dart';
 import 'fitur/Challanges/Sentences/beginner/_servicesBeginner.dart';
 import 'fitur/Challanges/Sentences/intermediate/_servicesintermediate.dart';
 import 'fitur/Challanges/Sentences/advance/_servicesiAdvance.dart';
 import 'fitur/Challanges/myDictionary/_Provider.dart';
-
-// import 'Home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,21 +33,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ProfilProv()),
-        ChangeNotifierProvider(create: (_) => SwitchModeProvider()),
-        ChangeNotifierProvider(
-          create: (context) => BeginnerButtonListProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => IntermediateButtonListProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AdvanceButtonListProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => WordProvider(),
-        ),
-        ChangeNotifierProvider(create: (context) => AuthProvider())
+        ChangeNotifierProvider(create: (context) => ProfilProv()),
+        ChangeNotifierProvider(create: (context) => SwitchModeProvider()),
+        ChangeNotifierProvider(create: (context) => BeginnerButtonListProvider()),
+        ChangeNotifierProvider(create: (context) => IntermediateButtonListProvider()),
+        ChangeNotifierProvider(create: (context) => AdvanceButtonListProvider()),
+        ChangeNotifierProvider(create: (context) => WordProvider()),
+        ChangeNotifierProvider(create: (context) => AuthProvider()),
+        ChangeNotifierProvider(create: (context) => GameProvider())
       ],
       child: Consumer<SwitchModeProvider>(builder: (context, value, _) {
         return MaterialApp(

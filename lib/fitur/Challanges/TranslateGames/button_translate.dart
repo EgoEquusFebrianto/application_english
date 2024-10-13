@@ -1,240 +1,193 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'Word.dart';
-import 'EndGamePage.dart';
+import 'package:provider/provider.dart';
+import 'game_provider.dart';
+import 'progressBar.dart';
 
-class ButtonTranslate extends StatefulWidget {
-  @override
-  _ButtonTranslateState createState() => _ButtonTranslateState();
-}
-
-class _ButtonTranslateState extends State<ButtonTranslate> {
-  int points = 0; // Jumlah poin
-  List<MapEntry<String, String>> selectedPairs =
-      []; // List pasangan kata yang dipilih oleh pengguna
-  int currentRound = 1; // Perulangan saat ini
-  int totalRounds = 3; // Total perulangan
-  List<MapEntry<String, String>> shuffledPairs =
-      []; // List pasangan kata yang sudah diacak
-  List<List<MapEntry<String, String>>> wordPairsGroups =
-      []; // Grup pasangan kata
-  int currentPairsGroupIndex =
-      0; // Indeks grup pasangan kata yang sedang ditampilkan
-
-  @override
-  void initState() {
-    super.initState();
-    // Bagi data kata menjadi grup berdasarkan jumlah pasangan kata yang ingin ditampilkan pada setiap putaran
-    List<List<MapEntry<String, String>>> groupedPairs =
-        splitWordPairs(WordPairs.data, 5);
-    wordPairsGroups = groupedPairs;
-    // Inisialisasi putaran pertama
-    shuffledPairs = groupedPairs[currentPairsGroupIndex].toList()..shuffle();
-  }
-
-  // Fungsi untuk membagi data kata menjadi grup berdasarkan jumlah pasangan kata yang ingin ditampilkan pada setiap putaran
-  List<List<MapEntry<String, String>>> splitWordPairs(
-      Map<String, String> wordPairs, int groupSize) {
-    List<MapEntry<String, String>> pairsList = wordPairs.entries.toList();
-    List<List<MapEntry<String, String>>> result = [];
-
-    for (int i = 0; i < pairsList.length; i += groupSize) {
-      int end =
-          (i + groupSize < pairsList.length) ? i + groupSize : pairsList.length;
-      result.add(pairsList.sublist(i, end));
-    }
-
-    return result;
-  }
-
+class ButtonTranslate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var gameProv = Provider.of<GameProvider>(context);
+
+    if (gameProv.clear) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        gameProv.handleCompletion(context);
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Translate Game'),
-        backgroundColor: Colors.blue,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              margin: EdgeInsets.all(40),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Cocokkan Kata Yang Tepat !",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                              color: Colors.white),
-                        ),
-                        Text(
-                          "Selamat Bermain...",
-                          style: TextStyle(color: Colors.white),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Points: $points',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.black),
-                    ),
-                    // Menampilkan pasangan kata Inggris-Indonesia
-                    for (var pair in shuffledPairs)
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Expanded(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  selectPair(pair);
-                                },
-                                child: Text(
-                                  pair.key,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
-                                        fontSize: 11,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 60,
-                              width: 20,
-                            ), // Menam
-                            Expanded(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  selectPair(pair);
-                                },
-                                child: Text(
-                                  pair.value,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
-                                        fontSize: 11,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            ),
-            Text(
-              'Round $currentRound of $totalRounds',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black),
-            ),
-            SizedBox(height: 5),
-            Divider(
-                color: Colors.black, // Warna garis
-                thickness: 2, // Ketebalan garis (dalam satuan logical pixels)
-                height: 10,
-                indent: 90,
-                endIndent: 90),
-            SizedBox(height: 5),
-            Divider(
-                color: Colors.black, // Warna garis
-                thickness: 2, // Ketebalan garis (dalam satuan logical pixels)
-                height: 10,
-                indent: 50,
-                endIndent: 50),
-            SizedBox(height: 20),
-          ],
+        title: Text(
+          "Cocokkan Kata!",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Colors.black87,
+          ),
         ),
       ),
-    );
-  }
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+                  child: ProgressBarWithIndicator(),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: gameProv.sampleData1.map((data) {
+                                String randomTranslation = data['translate'][0];
+                                bool isActive = gameProv.activate1[data['id']] ?? true;
 
-  // Fungsi untuk mengecek pencocokan pasangan kata
-  void selectPair(MapEntry<String, String> pair) {
-    setState(() {
-      selectedPairs.add(pair); // Tambahkan pasangan yang dipilih oleh pengguna
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 8),
+                                  child: ElevatedButton(
+                                    onPressed: isActive
+                                        ? () {
+                                            gameProv.setOnClick(1, data['id']);
+                                            gameProv.checkMatching();
+                                          }
+                                        : null,
+                                    child: isActive ? Text(randomTranslation) : null,
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: isActive ? Colors.orange : Colors.white,
+                                      foregroundColor: isActive ? Colors.white : Colors.transparent,
+                                      minimumSize: Size(double.infinity, 50),
+                                      side: gameProv.onClick1 == data['id'] ||
+                                              (gameProv.wrongAnswer && gameProv.onClick1 == data['id'])
+                                          ? BorderSide(color: gameProv.wrongAnswer ? Colors.red : Colors.black, width: 2)
+                                          : BorderSide.none,
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                          SizedBox(width: 15),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: gameProv.sampleData2.map((data) {
+                                bool isActive = gameProv.activate2[data['id']] ?? true;
 
-      if (selectedPairs.length == 2) {
-        // Jika pengguna telah memilih dua pasangan kata
-        MapEntry<String, String> firstPair = selectedPairs[0];
-        MapEntry<String, String> secondPair = selectedPairs[1];
-
-        // Cek apakah pasangan kata cocok
-        if ((shuffledPairs.contains(firstPair) &&
-                shuffledPairs.contains(secondPair)) &&
-            ((firstPair.key == pair.key && secondPair.value == pair.value) ||
-                (secondPair.key == pair.key &&
-                    firstPair.value == pair.value))) {
-          // Jika pasangan kata cocok
-          points += 5;
-          shuffledPairs.remove(firstPair); // Hapus pasangan kata dari tampilan
-          shuffledPairs.remove(secondPair);
-        } else {
-          // Jika pasangan kata tidak cocok
-          if (points > 0) {
-            points -= 1; // Pengurangan poin hanya jika poin lebih besar dari 0
-          }
-
-          // Bergetar tombol jika pasangan kata tidak cocok
-          HapticFeedback.vibrate();
-        }
-
-        // Bersihkan daftar pasangan kata yang dipilih
-        selectedPairs.clear();
-
-        if (shuffledPairs.isEmpty) {
-          // Jika semua pencocokan telah selesai pada satu putaran
-          if (currentRound < totalRounds) {
-            // Lanjutkan ke putaran berikutnya
-            currentRound++;
-            if (currentPairsGroupIndex < wordPairsGroups.length - 1) {
-              // Lanjutkan ke grup kata berikutnya jika masih ada
-              currentPairsGroupIndex++;
-              shuffledPairs = wordPairsGroups[currentPairsGroupIndex].toList()
-                ..shuffle();
-            } else {
-              // Jika sudah mencapai grup kata terakhir, selesai permainan
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => EndGamePage(
-                    points: points,
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 8),
+                                  child: ElevatedButton(
+                                    onPressed: isActive
+                                        ? () {
+                                            gameProv.setOnClick(2, data['id']);
+                                            gameProv.checkMatching();
+                                          }
+                                        : null,
+                                    child: isActive ? Text(data['word']) : null,
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: isActive ? Colors.green : Colors.white,
+                                      foregroundColor: isActive ? Colors.white : Colors.transparent,
+                                      minimumSize: Size(double.infinity, 50),
+                                      side: gameProv.onClick2 == data['id'] ||
+                                              (gameProv.wrongAnswer && gameProv.onClick2 == data['id'])
+                                          ? BorderSide(color: gameProv.wrongAnswer ? Colors.red : Colors.black, width: 2)
+                                          : BorderSide.none,
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              );
-            }
-          } else {
-            // Tampilkan halaman akhir jika semua putaran telah selesai
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => EndGamePage(points: points),
+                // Tombol dan divider
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                  child: Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          print("Exit Pressed");
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          padding: EdgeInsets.all(25),
+                          backgroundColor: Colors.red,
+                        ),
+                        child: Icon(
+                          Icons.exit_to_app_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(width: 15),
+                      ElevatedButton(
+                        onPressed: gameProv.nextSession ? () {
+                          gameProv.startNewRound();
+                        } : null,
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                        ),
+                        child: Text("Selanjutnya", style: TextStyle(fontSize: 18)),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5),
+                Divider(
+                  color: Colors.black,
+                  thickness: 2,
+                  height: 10,
+                  indent: 80,
+                  endIndent: 80,
+                ),
+                SizedBox(height: 5),
+                Divider(
+                  color: Colors.black,
+                  thickness: 2,
+                  height: 10,
+                  indent: 50,
+                  endIndent: 50,
+                ),
+              ],
+            ),
+          ),
+          // Overlay for completion
+          if (gameProv.clear)
+            Positioned.fill(
+              child: Container(
+                color: Colors.black.withOpacity(0.5),
+                child: Center(
+                  child: Text(
+                    "Round Completed!",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-            );
-          }
-        }
-      }
-    });
+            ),
+        ],
+      ),
+    );
   }
 }
