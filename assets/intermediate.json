@@ -1,13 +1,54 @@
 [
     {
         "id" : 1,
-        "language": "Indonesia",
-        "kalimat" : "Kamu bertanggung jawab",
+        "kalimat" : "Dia sudah bekerja di sini selama dua tahun.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "You"
+                "word" : "He "
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "has been"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "working"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "here"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "for"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "two"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "year"
+            }
+        ],
+        "typeAns" : "F"
+    },
+    {
+        "id" : 2,
+        "kalimat" : "Mereka merencanakan liburan bulan depan.",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "They"
             },
             {
                 "id" : 2,
@@ -17,236 +58,76 @@
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "responsible"
-            }
-        ],
-        "typeAns" : "A"
-    },
-    {
-        "id" : 2,
-        "language": "Indonesia",
-        "kalimat" : "Dia tidak bertanggung jawab",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "She"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "is"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "not"
+                "word" : "planning"
             },
             {
                 "id" : 4,
                 "cursor" : false,
-                "word" : "responsible"
+                "word" : "a vacation"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "next"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "month"
             }
         ],
-        "typeAns" : "B"
+        "typeAns" : "E"
     },
     {
         "id" : 3,
-        "language": "Indonesia",
-        "kalimat" : "Ini tidak perlu",
+        "kalimat" : "Saya akan menghubungi Anda saat saya tiba.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "It"
+                "word" : "I"
             },
             {
                 "id" : 2,
                 "cursor" : false,
-                "word" : "is"
+                "word" : "will"
             },
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "not"
+                "word" : "call"
             },
             {
                 "id" : 4,
                 "cursor" : false,
-                "word" : "necessary"
+                "word" : "you"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "when"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "arrive"
             }
         ],
-        "typeAns" : "B"
+        "typeAns" : "F"
     },
     {
         "id" : 4,
-        "language": "Indonesia",
-        "kalimat" : "Buku itu cukup menarik",
+        "kalimat" : "Bisakah kamu membantu saya menyelesaikan masalah ini?",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "book"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "The"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "is"
-            }, 
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "pretty"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "interesting"
-            }
-        ],
-        "typeAns" : "C1"
-    },
-    {
-        "id" : 5,
-        "language": "Indonesia",
-        "kalimat" : "Menu itu tampaknya enak",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "menu"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "The"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "seems"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "delicious"
-            }
-        ],
-        "typeAns" : "B1"
-    },
-    {
-        "id" : 6,
-        "language": "Indonesia",
-        "kalimat" : "Kuda itu mengambik jeruk itu",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "The"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "horse"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "takes"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "the"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "orange"
-            }
-        ],
-        "typeAns" : "C"
-    },
-    {
-        "id" : 6,
-        "language": "Indonesia",
-        "kalimat" : "Dokter itu menawarkan sebuah apel",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "doctor"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "The"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "offers"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "an"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "apple"
-            }
-        ],
-        "typeAns" : "C1"
-    },
-    {
-        "id" : 7,
-        "language": "Indonesia",
-        "kalimat" : "itu adalah musim semi terakhir",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "It"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "is"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "the"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "final"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "season"
-            }
-        ],
-        "typeAns" : "C"
-    },
-    {
-        "id" : 8,
-        "language": "Indonesia",
-        "kalimat" : "Apakah kamu datang dari Jakarta?",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Are"
+                "word" : "Can"
             },
             {
                 "id" : 2,
@@ -256,144 +137,71 @@
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "come"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "from"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "Jakarta"
-            }
-        ],
-        "typeAns" : "C"
-    }, 
-    {
-        "id" : 9,
-        "language": "Indonesia",
-        "kalimat" : "Setidaknya menurut saya begitu",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "At"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "least"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "i"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "think"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "so"
-            }
-        ],
-        "typeAns" : "C"
-    },
-    {
-        "id" : 10,
-        "language": "Indonesia",
-        "kalimat" : "Ayo belajar dengan saya",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Come"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "study"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "with"
+                "word" : "help"
             },
             {
                 "id" : 4,
                 "cursor" : false,
                 "word" : "me"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "solve"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "this"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "problem"
             }
         ],
-        "typeAns" : "B"
-    },{
-        "id" : 11,
-        "language": "Indonesia",
-        "kalimat" : "Apakah itu setidaknya mungkin?",
+        "typeAns" : "F"
+    },
+    {
+        "id" : 5,
+        "kalimat" : "Film yang kita tonton tadi malam sangat menarik.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "Is"
+                "word" : "The movie"
             },
             {
                 "id" : 2,
                 "cursor" : false,
-                "word" : "it"
+                "word" : "we"
             },
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "at"
+                "word" : "watched"
             },
             {
                 "id" : 4,
                 "cursor" : false,
-                "word" : "least"
-            },            
+                "word" : "last"
+            },
             {
                 "id" : 5,
                 "cursor" : false,
-                "word" : "possible"
+                "word" : "night"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "was"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "interesting"
             }
         ],
-        "typeAns" : "C"
-    },{
-        "id" : 12,
-        "language": "Indonesia",
-        "kalimat" : "Apa jawaban terakhir kamu?",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "What"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "is"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "your"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "final"
-            },            
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "Answer"
-            }
-        ],
-        "typeAns" : "C"
+        "typeAns" : "F"
     }
 ]

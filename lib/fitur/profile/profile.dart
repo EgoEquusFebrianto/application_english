@@ -1,19 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'about_yeah.dart';
-import 'edit.dart';
-import 'provider/profil_prov.dart';
 import 'package:provider/provider.dart';
 import 'package:application_english/fitur/login_and_regist/auth_prov.dart';
+import 'provider/profil_prov.dart';
+import 'about_yeah.dart';
+import 'edit.dart';
 
-class Profile extends StatefulWidget {
+class Profile extends StatelessWidget {
   const Profile({super.key});
 
-  @override
-  State<Profile> createState() => _ProfileState();
-}
-
-class _ProfileState extends State<Profile> {
   void _showDialog(BuildContext context, String title, String content) {
     showDialog(
       context: context,

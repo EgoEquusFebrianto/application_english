@@ -7,7 +7,7 @@ ThemeData light = ThemeData(
 
 ThemeData dark = ThemeData(
   brightness: Brightness.dark,
-  primarySwatch: Colors.blue,
+  primarySwatch: Colors.lightBlue,
 );
 
 class SwitchModeProvider extends ChangeNotifier {

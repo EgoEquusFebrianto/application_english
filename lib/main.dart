@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'home_provider.dart';
 import 'fitur/login_and_regist/auth_prov.dart';
 import 'fitur/login_and_regist/login.dart';
 import 'fitur/profile/provider/profil_prov.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'fitur/profile/provider/switchProvider.dart';
 import 'fitur/Challanges/TranslateGames/game_provider.dart';
-import 'fitur/Challanges/Sentences/beginner/_servicesBeginner.dart';
-import 'fitur/Challanges/Sentences/intermediate/_servicesintermediate.dart';
-import 'fitur/Challanges/Sentences/advance/_servicesiAdvance.dart';
 import 'fitur/Challanges/myDictionary/_Provider.dart';
+import 'fitur/Challanges/Sentences/HandlerButton_prov.dart';
+import 'fitur/Challanges/Sentences/_services.dart';
+import 'fitur/providers/translation_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,12 +36,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => ProfilProv()),
         ChangeNotifierProvider(create: (context) => SwitchModeProvider()),
-        ChangeNotifierProvider(create: (context) => BeginnerButtonListProvider()),
-        ChangeNotifierProvider(create: (context) => IntermediateButtonListProvider()),
-        ChangeNotifierProvider(create: (context) => AdvanceButtonListProvider()),
         ChangeNotifierProvider(create: (context) => WordProvider()),
         ChangeNotifierProvider(create: (context) => AuthProvider()),
-        ChangeNotifierProvider(create: (context) => GameProvider())
+        ChangeNotifierProvider(create: (context) => GameProvider()),
+        ChangeNotifierProvider(create: (context) => TranslationProvider()),
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
+        ChangeNotifierProvider(create: (context) => HandlerButtonProvider()),
+        ChangeNotifierProvider(create: (context) => ClickedButtonListProvider()),
       ],
       child: Consumer<SwitchModeProvider>(builder: (context, value, _) {
         return MaterialApp(

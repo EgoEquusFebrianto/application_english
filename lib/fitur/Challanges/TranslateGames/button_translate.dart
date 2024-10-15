@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:application_english/fitur/profile/provider/switchProvider.dart';
 import 'game_provider.dart';
 import 'progressBar.dart';
 
@@ -7,6 +8,7 @@ class ButtonTranslate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var gameProv = Provider.of<GameProvider>(context);
+    var theme = Provider.of<SwitchModeProvider>(context);
 
     if (gameProv.clear) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -21,7 +23,7 @@ class ButtonTranslate extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
-            color: Colors.black87,
+            color: theme.darkMode? Colors.white: Colors.black87,
           ),
         ),
       ),
@@ -152,15 +154,15 @@ class ButtonTranslate extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 Divider(
-                  color: Colors.black,
+                  color: theme.darkMode? Colors.white70: Colors.black,
                   thickness: 2,
-                  height: 10,
+                  height: 10, 
                   indent: 80,
                   endIndent: 80,
                 ),
                 SizedBox(height: 5),
                 Divider(
-                  color: Colors.black,
+                  color: theme.darkMode? Colors.white70: Colors.black,
                   thickness: 2,
                   height: 10,
                   indent: 50,

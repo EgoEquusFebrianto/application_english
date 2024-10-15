@@ -1,45 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => AboutYeah()),
-            );
-          },
-          child: const Text('Go to About'),
-        ),
-      ),
-    );
-  }
-}
-
 class AboutYeah extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('About'),
-          backgroundColor: Colors.blue,
+        backgroundColor: Colors.blue,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -58,8 +25,6 @@ class AboutYeah extends StatelessWidget {
               WhyChoose(),
               const SizedBox(height: 30),
               TheTeamHeader(),
-              const SizedBox(height: 30),
-
               const SizedBox(height: 30),
               FeaturesSection(),
             ],
@@ -190,101 +155,6 @@ class TheTeamHeader extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TeamCard extends StatelessWidget {
-  final String name;
-  final String image;
-
-  const TeamCard({
-    required this.name,
-    required this.image,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    double cardWidth = MediaQuery.of(context).size.width / 2 - 40;
-
-    return Container(
-      width: cardWidth,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          CustomPaint(
-            size: Size(cardWidth, 150),
-            painter: MessageBubblePainter(),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 20),
-              CircleAvatar(
-                backgroundImage: AssetImage(image),
-                radius: 60,
-              ),
-              const SizedBox(height: 60),
-              Text(
-                name,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class MessageBubblePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.blue.withOpacity(0.2)
-      ..style = PaintingStyle.fill;
-
-    final path = Path()
-      ..moveTo(0, size.height * 0.5)
-      ..quadraticBezierTo(0, 0, size.width * 0.25, 0)
-      ..quadraticBezierTo(
-          size.width * 0.5, 0, size.width * 0.5, size.height * 0.25)
-      ..quadraticBezierTo(size.width * 0.5, size.height * 0.5,
-          size.width * 0.75, size.height * 0.5)
-      ..quadraticBezierTo(
-          size.width, size.height * 0.5, size.width, size.height * 0.75)
-      ..quadraticBezierTo(
-          size.width, size.height, size.width * 0.75, size.height)
-      ..quadraticBezierTo(
-          size.width * 0.5, size.height, size.width * 0.5, size.height * 0.75)
-      ..quadraticBezierTo(size.width * 0.5, size.height * 0.5,
-          size.width * 0.25, size.height * 0.5)
-      ..quadraticBezierTo(0, size.height * 0.5, 0, size.height * 0.25)
-      ..close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
   }
 }
 

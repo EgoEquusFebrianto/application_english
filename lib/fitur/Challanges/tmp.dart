@@ -8,7 +8,6 @@ class Challange extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Using ValueNotifier to manage loading state
     ValueNotifier<bool> loadingNotifier = ValueNotifier<bool>(false);
 
     return Scaffold(
@@ -112,7 +111,7 @@ class Challange extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
-            image: AssetImage(imageUrl), // Assuming all images are assets
+            image: AssetImage(imageUrl),
             fit: BoxFit.cover,
           ),
         ),

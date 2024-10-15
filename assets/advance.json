@@ -1,480 +1,287 @@
 [
     {
         "id" : 1,
-        "language" : "Indonesia",
-        "kalimat" : "apakah mereka manusia",
+        "kalimat" : "Meskipun tantangan yang ada, dia berhasil menyelesaikan proyek tepat waktu.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "Are"
+                "word" : "Despite "
             },
             {
                 "id" : 2,
                 "cursor" : false,
-                "word" : "they"
+                "word" : "the challenges"
             },
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "human"
-            }
-        ],
-        "typeAns" : "A"
-    },
-        {
-        "id" : 2,
-        "language" : "Indonesia",
-        "kalimat" : "Apa nama resminya",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "What"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "name"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "official"
+                "word" : "she"
             },
             {
                 "id" : 4,
                 "cursor" : false,
-                "word" : "is"
+                "word" : "managed"
             },
             {
                 "id" : 5,
-                "cursor" : false,
-                "word" : "the"
-            }
-        ],
-        "typeAns" : "D1"
-    },
-    {
-        "id" : 3,
-        "language" : "English",
-        "kalimat" : "She is my future girlfriend",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Dia"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "adalah"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "calon"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "pacar"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "saya"
-            }
-        ],
-        "typeAns" : "C"
-    },
-    {
-        "id" : 4,
-        "language" : "Indonesia",
-        "kalimat" : "Saya cinta dia dan seluruh keluarga saya",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "I"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "love"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "her"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "and"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "whole"
-            },
-            {
-                "id" : 6,
-                "cursor" : false,
-                "word" : "My"
-            },
-            {
-                "id" : 7,
-                "cursor" : false,
-                "word" : "family"
-            }
-        ],
-        "typeAns" : "E"
-    },
-    {
-        "id" : 6,
-        "language" : "Indonesia",
-        "kalimat" : "Anak-anak itu tidak bertanggung jawab",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "children"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "are"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "The"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "not"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "responsible"
-            }
-        ],
-        "typeAns" : "F1"
-    },
-    {
-        "id":7,
-        "language" : "English",
-        "kalimat": "Return the horse to him",
-        "words": [
-            {
-                "id":1,
-                "cursor":false,
-                "word": "Kembalikan"
-            },
-            {
-                "id":2,
-                "cursor":false,
-                "word": "itu"
-            },
-                        {
-                "id":3,
-                "cursor":false,
-                "word": "Kuda"
-            },
-                        {
-                "id":4,
-                "cursor":false,
-                "word": "kepadanya"
-            }
-        ],
-        "typeAns": "B1"
-    },
-    {
-        "id" : 8,
-        "language" : "Indonesia",
-        "kalimat" : "Seorang wanita dan sebuah apel",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "A"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "woman"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "and"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "an"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "apple"
-            }
-        ],
-        "typeAns" : "C"
-    },
-    {
-        "id" : 9,
-        "language" : "Indonesia",
-        "kalimat" : "Tolong pertimbangkan pekerjaan yang saya tawarkan kepadamu",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Please"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "consider"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "the"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "job"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "I"
-            },
-            {
-                "id" : 6,
-                "cursor" : false,
-                "word" : "offer"
-            },
-            {
-                "id" : 7,
                 "cursor" : false,
                 "word" : "to"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "complete"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "the project"
             },
             {
                 "id" : 8,
                 "cursor" : false,
-                "word" : "you"
+                "word" : "on"
+            },
+            {
+                "id" : 9,
+                "cursor" : false,
+                "word" : "time"
             }
         ],
-        "typeAns" : "F"
-    },{
-        "id" : 10,
-        "language" : "Indonesia",
-        "kalimat" : "Dia menawarkan kepada saya uangnya",
+        "typeAns" : "H"
+    },
+    {
+        "id" : 2,
+        "kalimat" : "Jika saya tahu tentang kemacetan, saya akan berangkat lebih awal.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "He"
+                "word" : "If "
             },
             {
                 "id" : 2,
                 "cursor" : false,
-                "word" : "Offers"
+                "word" : "I"
             },
             {
                 "id" : 3,
+                "cursor" : false,
+                "word" : "had"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "known"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "about"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "the traffic"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 8,
+                "cursor" : false,
+                "word" : "would"
+            },
+            {
+                "id" : 9,
+                "cursor" : false,
+                "word" : "have"
+            },
+            {
+                "id" : 10,
+                "cursor" : false,
+                "word" : "left"
+            },
+            {
+                "id" : 11,
+                "cursor" : false,
+                "word" : "earlier"
+            }
+        ],
+        "typeAns" : "J"
+    },
+    {
+        "id" : 3,
+        "kalimat" : "Kebijakan pemerintah bertujuan untuk mengurangi pengangguran dengan menciptakan peluang kerja baru.",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "The government's "
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "policy"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "aims"
+            },
+            {
+                "id" : 4,
                 "cursor" : false,
                 "word" : "to"
             },
             {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "me"
-            },
-            {
                 "id" : 5,
                 "cursor" : false,
-                "word" : "his"
+                "word" : "reduce"
             },
             {
                 "id" : 6,
                 "cursor" : false,
-                "word" : "money"
+                "word" : "unemployment"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "by"
+            },
+            {
+                "id" : 8,
+                "cursor" : false,
+                "word" : "creating"
+            },
+            {
+                "id" : 9,
+                "cursor" : false,
+                "word" : "new"
+            },
+            {
+                "id" : 10,
+                "cursor" : false,
+                "word" : "job"
+            },
+            {
+                "id" : 11,
+                "cursor" : false,
+                "word" : "opportunities"
             }
         ],
-        "typeAns" : "D"
+        "typeAns" : "J"
     },
     {
-        "id" : 11,
-        "language" : "English",
-        "kalimat" : "She and i present your work",
+        "id" : 4,
+        "kalimat" : "Dia adalah pendukung pembangunan berkelanjutan dan perlindungan lingkungan.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "Dia"
+                "word" : "He "
             },
             {
                 "id" : 2,
                 "cursor" : false,
-                "word" : "dan"
+                "word" : "is"
             },
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "Saya"
+                "word" : "an advocate"
             },
             {
                 "id" : 4,
                 "cursor" : false,
-                "word" : "mempresentasikan"
+                "word" : "for"
             },
             {
                 "id" : 5,
                 "cursor" : false,
-                "word" : "pekerjaanmu"
-            }
-        ],
-        "typeAns" : "C"
-    },{
-        "id" : 12,
-        "language" : "English",
-        "kalimat" : "I remember the times when you fail",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Saya"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "ingat"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "waktu"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "ketika"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "kamu"
+                "word" : "sustainable"
             },
             {
                 "id" : 6,
                 "cursor" : false,
-                "word" : "gagal"
+                "word" : "development"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "and"
+            },
+            {
+                "id" : 8,
+                "cursor" : false,
+                "word" : "environmental"
+            },
+            {
+                "id" : 9,
+                "cursor" : false,
+                "word" : "protection"
             }
         ],
-        "typeAns" : "D"
-    },{
-        "id" : 13,
-        "language" : "English",
-        "kalimat" : "Save the wine for tonight",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Simpan"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "anggurnya"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "untuk"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "malam"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "ini"
-            }
-        ],
-        "typeAns" : "C"
-    },{
-        "id" : 14,
-        "language" : "English",
-        "kalimat" : "I really like this job",
-        "words" : [
-            {
-                "id" : 1,
-                "cursor" : false,
-                "word" : "Saya"
-            },
-            {
-                "id" : 2,
-                "cursor" : false,
-                "word" : "sangat"
-            },
-            {
-                "id" : 3,
-                "cursor" : false,
-                "word" : "menyukai"
-            },
-            {
-                "id" : 4,
-                "cursor" : false,
-                "word" : "pekerjaan"
-            },
-            {
-                "id" : 5,
-                "cursor" : false,
-                "word" : "ini"
-            }
-        ],
-        "typeAns" : "C"
+        "typeAns" : "H"
     },
     {
-        "id" : 15,
-        "language" : "Indonesia",
-        "kalimat" : "Kamu berbicara bahasa Inggris dengan sangat baik!",
+        "id" : 5,
+        "kalimat" : "Jika bukan karena kegigihannya, negosiasi tersebut pasti sudah gagal.",
         "words" : [
             {
                 "id" : 1,
                 "cursor" : false,
-                "word" : "You"
+                "word" : "Had "
             },
             {
                 "id" : 2,
                 "cursor" : false,
-                "word" : "speak"
+                "word" : "it"
             },
             {
                 "id" : 3,
                 "cursor" : false,
-                "word" : "English"
+                "word" : "not been"
             },
             {
                 "id" : 4,
                 "cursor" : false,
-                "word" : "very"
+                "word" : "for"
             },
             {
                 "id" : 5,
                 "cursor" : false,
-                "word" : "Well!"
+                "word" : "her"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "persistence"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "the negotiations"
+            },
+            {
+                "id" : 8,
+                "cursor" : false,
+                "word" : "would"
+            },
+            {
+                "id" : 9,
+                "cursor" : false,
+                "word" : "have"
+            },
+            {
+                "id" : 10,
+                "cursor" : false,
+                "word" : "failed"
             }
         ],
-        "typeAns" : "C"
+        "typeAns" : "I"
     }
 ]

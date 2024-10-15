@@ -70,15 +70,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/example.json
     - assets/dictionary.json
-    - assets/beginnerLevel.json
+    - assets/beginner.json
     - assets/intermediate.json
     - assets/advance.json
-    - assets/pict/peter.jpeg
-    - assets/pict/febrianto.jpeg
-    - assets/pict/joshua.jpeg
-    - assets/pict/albert.jpeg
     - assets/pict/icons/Beginner.jpg
     - assets/pict/icons/Intermediate.jpg
     - assets/pict/icons/Upper-Intermediate.jpg
