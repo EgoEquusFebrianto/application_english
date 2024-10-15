@@ -12,6 +12,7 @@ import 'fitur/feature_card.dart';
 import 'fitur/drawer_list_tile.dart';
 import 'fitur/translation_card.dart';
 import 'fitur/custom_bottom_navigation_bar.dart';
+import 'fitur/Challanges/tmp.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -34,7 +35,8 @@ class Home extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HandlerButton()),
+                // MaterialPageRoute(builder: (context) => const HandlerButton()),
+                MaterialPageRoute(builder: (context) => const Challange()),
               );
             },
             child: const Icon(Icons.backup_table_sharp),
